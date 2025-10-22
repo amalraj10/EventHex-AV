@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# EventHex Audio
 
-## Project info
+Live session UI with microphone visualization and recording timer.
 
-**URL**: https://lovable.dev/projects/814403f9-c4cd-4d1f-a262-3de6239ff34f
+## Prerequisites
 
-## How can I edit this code?
+- Node.js 18+ and npm
+- A browser with microphone support (Chrome, Edge, Safari)
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/814403f9-c4cd-4d1f-a262-3de6239ff34f) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Getting started
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone <YOUR_REPO_URL>
+cd EventHexAudio
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open the printed local URL (usually `http://localhost:5173`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available scripts
 
-**Use GitHub Codespaces**
+```sh
+# Start dev server
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Production build
+npm run build
 
-## What technologies are used for this project?
+# Preview the production build locally
+npm run preview
 
-This project is built with:
+# Lint source
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
+## Using the app
+
+- Click Go live to start the session. Your browser will ask for microphone permission on first use.
+- The timer runs only while the microphone is active and the session is recording.
+- Click Stop to end recording; the timer will stop and reset.
+
+## Notes on microphone permission
+
+- You must allow microphone access when prompted; otherwise the timer will remain at `00:00:00`.
+- On some browsers, mic access requires HTTPS or `localhost`.
+- If permission was denied, clear the site permission and try again.
+
+## Tech stack
+
+- Vite, React 18, TypeScript
+- React Router
 - Tailwind CSS
 
-## How can I deploy this project?
+## Troubleshooting
 
-Simply open [Lovable](https://lovable.dev/projects/814403f9-c4cd-4d1f-a262-3de6239ff34f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Timer stuck at `00:00:00` on first Go live:
+  - Ensure you clicked Allow on the mic prompt.
+  - Make sure another tab/app isn’t using the microphone exclusively.
+  - Try `localhost` over HTTP(S) or serve over HTTPS for some browsers.

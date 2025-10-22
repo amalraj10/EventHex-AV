@@ -1,10 +1,5 @@
 import { ChevronDown, Languages } from "lucide-react";
-
-interface SessionHeaderProps {
-  title: string;
-  date: string;
-  time: string;
-}
+import { SessionHeaderProps } from "@/types/session.types";
 
 const SessionHeader = ({ title, date, time }: SessionHeaderProps) => {
   return (
@@ -17,7 +12,7 @@ const SessionHeader = ({ title, date, time }: SessionHeaderProps) => {
           {date} | {time}
         </p>
       </div>
-      
+
       <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
         <Languages className="w-4 h-4 text-gray-600" />
         <span className="text-sm text-gray-700 font-medium">English</span>
