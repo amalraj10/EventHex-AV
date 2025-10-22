@@ -1,13 +1,4 @@
-export type SessionStatus = "pending" | "processed" | "recording" | "checking";
-
-export interface Session {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  eventName: string;
-  status: SessionStatus;
-}
+import { Session } from "@/types/session.types";
 
 export const sessions: Session[] = [
   {

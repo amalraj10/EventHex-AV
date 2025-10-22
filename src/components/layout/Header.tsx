@@ -1,21 +1,22 @@
 import { Globe } from "lucide-react";
-import logo from "@/assets/logos/header-logo-1.svg";
 import { useNavigate } from "react-router-dom";
-import Button from "./common/Button";
+import Logo from "@/components/common/Logo";
+import { ROUTES } from "@/constants/routes";
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/");
-  }
+  const handleLogoClick = () => {
+    navigate(ROUTES.HOME);
+  };
+
   return (
     <header className="border-b border-border bg-background px-6 py-4">
       <div className="flex items-center justify-between">
-        <img src={logo} alt="EventHex" className="h-8" onClick={handleClick}/>
-        <Button className="p-2 hover:bg-accent rounded-lg transition-colors">
+        <Logo onClick={handleLogoClick} />
+        <button className="p-2 hover:bg-accent rounded-lg transition-colors">
           <Globe className="w-5 h-5 text-muted-foreground" />
-        </Button>
+        </button>
       </div>
     </header>
   );
